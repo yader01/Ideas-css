@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Pagina grid</title>
+    
+   
+  
+<meta name="theme-color" content="#99CCFF"/>
+    
+    
+    
+    <style type="text/css" media="all">
+      
+ 
+      
+      
+   @font-face {
+    font-family: "gotica";
+    src: url("gotica.ttf");
+   }
+      
+   @font-face {
+    font-family: "carta";
+    src: url("carta.ttf");
+   }
+   
+
+   
+   @font-face {
+    font-family: "decorado";
+   
+    src: url("decorado.ttf");
+   }
+    
+    
+    .flecha{
+      border: solid 2px yellow;
+      margin-left: 5px;
+      border-right-color: black;
+      border-right-width: 10px;
+      border-left-width: 0px;
+      
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+      
+      border-top-color: transparent;
+  
+      border-bottom-color: transparent;
+  
+     
+      height: 0px;
+      width: 0px;
+      float: right;
+      
+     //display: inline-block;
+     //margin-top: 4px;
+     align-self: center;
+    }
+    
+    .container{
+      display:grid;
+      
+      
+      font: normal 20px sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+          
+    
+      grid-template-columns: 100%;
+      //border: solid 0.8px rgba(0,0,0,0.3) ;
+      border: none;
+      //overflow: scroll;
+   
+      
+    }
+    
+      .header{
+        display: grid;
+        grid-template-columns: repeat(1,100%);
+        background-color: rgba(0,0,0,0.1);
+             overflow: auto;
+       
+     
+      }
+      
+      #title_banner{
+        
+        font-family: decorado;
+        font-size: 30px;
+        Color: black;
+        position: absolute;
+        z-index: 4;
+        overflow: auto;
+        translate: 5px -25px ;
+      }
+      
+      .nav{
+       display: grid;
+      grid-template-columns: repeat(auto-fit, 110px);
+ // background: linear-gradient(45deg, black, rgba(255,0,255,1), rgba(160,0,0,1));
+     
+     background-color: white;
+     
+      border: solid 1px grey;
+      
+        gap: 5px;
+       
+      justify-content: center;
+        float: top;
+       padding-bottom: 6px;
+       padding-top: 6px;
+       position: sticky;
+       top: -1px;
+
+      width: 100%;
+      
+      font: normal 16px sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
+      
+      // border-radius: 10px;
+       z-index: 10;
+      
+      }
+      #pr{
+       // background-color: red;
+        padding: 0px;
+        margin: 0px;
+        font-size: 18px;
+        
+      }
+     .boton{
+   transition-property: border, border-bottom-width;
+   transition-duration: 1s ;
+   transition-timing-function: ease-out;
+       
+       display: grid;
+      // background-color: rgba(0,0,0,0.5);
+       padding-top: 5px;
+       padding-bottom: 5px;
+       color: blue;
+      // border-radius: 5px;
+      justify-content: center;
+       
+       grid-template-columns: auto auto;
+       gap: 3px;
+       
+      border: solid 0px black;
+      border-bottom-width: 0px;
+       
+     }
+     
+     
+     .boton:hover{
+       
+  transition-property: border, border-bottom-width;
+   transition-duration: 1s ;
+   transition-timing-function: ease-out;
+       
+      border: solid 0px black;
+      border-bottom-width: 2px;
+       
+       
+     }
+     
+     
+      .banner{
+        width: 100%;
+       background-color: white;
+       padding: 20px;
+       box-shadow: gray 0px -1px 5px inset;
+      }
+      
+      .mi_logo{
+        // background: rgba(244,90,4,1);
+        width: 0px;
+        height: 0px;
+      // padding: 20px;
+        
+        
+      
+       border: double 20px rgba(0,0,0,1);
+       border-bottom-color: blue;
+       border-bottom-width: 200px;
+       
+       border-left-width: 80px;
+       border-top-width: 80px;
+       border-right-width: 30px;
+       border-bottom-width: 50px;
+       border-radius: 100px;
+       
+       
+      border-right-color: rgba(0,0,200,0.9);
+      
+       //border-left-color: transparent;
+       border-top-color: gray;
+      translate: -15px 0px;
+        
+      }
+      
+      .cuerpo{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+        justify-content: end;
+        
+      }
+
+      
+      
+      
+      
+      
+      .section{
+        text-align: left;
+        //background-color: rgba(5,5,255,0);
+        background-color: white;
+        padding: 8px;
+        text-align: justify;
+        color: rgba(0,0,0,0.6);
+    
+      //  box-shadow: black 0px -1px 5px 0.1px;
+        
+          
+      // font-family: carta;
+     //  font-size: 30px;
+      // color: Blue;
+    
+    
+        
+      }
+      
+      .aside{
+        
+        width: 1fr;
+       
+       background-color: rgba(255,255,255,0.5);
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+       grid-auto-flow: columns;
+       grid-auto-columns: auto;
+      justify-content: center;
+      padding: 8px;
+    
+      }
+      
+      .footer{  background-color: rgba(1,2,2,0.4);
+        color: white;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      
+      .lista{
+        text-decoration: underline;
+        color: rgba(50,50,255,0.8);
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .aviso{
+        background-color: rgba(160,160,255,0.5);
+        border-left: solid 5px rgba(100,100,255,1);
+        border-radius: 5px;
+        text-align: center;
+        font-size: 17px;
+        color: black;
+        width: 91%;
+        
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 1px;
+        padding-right: 4px;
+        text-align: justify;
+        display: grid;
+        grid-template-columns: 26px auto;
+        align-items: center;
+        gap: 2px;
+      }
+      .icon_aviso{
+        width: 25px;
+        height: 25px;
+      }
+      
+      body{
+        
+      //  background: linear-gradient(45deg, green, rgba(255,100,255,1), rgba(255,2,0,1), black  , black);
+       
+       padding: 0px;
+       margin: 0px ;
+        
+      }
+      
+      #firma{
+        
+        font-family: carta;
+       font-size: 30px;
+       color: Blue;
+       text-decoration: underline;
+     
+      }
+      
+      
+    #firma:first-letter {
+      font-size: 60px;
+      text-transform: uppercase;
+      }
+      
+      
+    </style>
+    
+  </head>
+  <body>
+   
+   <center>
+    
+      <nav class="nav">
+        
+        
+        <label class="boton"><p id="pr">Inicio</p> <div  class="flecha"></div></label>
+        
+        
+        <label class="boton"><p id="pr">Cursos</p> <div  class="flecha"></div></label>
+        
+        
+        
+        <label class="boton"><p id="pr">Medios</p> <div  class="flecha"></div></label>
+        
+        
+        <label class="boton"><p id="pr">Comunidad</p> <div  class="flecha"></div></label>
+        
+        
+        <label class="boton"><p id="pr">Contactos</p> <div  class="flecha"></div></label>
+        
+  
+      </nav>
+      
+      
+   
+      
+   <section class="container">
+
+    <header class="header">
+      <p id="title_banner">Yader Molina</p>
+     <div class="banner">
+       <div class="mi_logo">
+         
+       </div>
+     </div>
+      
+    </header>
+    
+    <section class="cuerpo">
+
+    <section class="section">
+      <h1> <center>Tituto especial del contenido</center></h1>
+      <article class="article">
+        
+        <p>Este es el parrafo  creado para el comtenido de la web, el cual consiste en ejecutar sentensias css y script</p>
+        
+      </article>
+      <article class="article">
+
+        <p>Este es el parrafo  creado para el comtenido de la web, el cual consiste en ejecutar sentensias css y script</p>
+        
+       <div class="aviso">
+         <img class="icon_aviso" src="aviso.png" />
+        <strong >
+          
+      Este es el parrafo  creado para el comtenido de la web, el cual consiste en ejecutar sentensias css y scrip
+          
+        </strong>
+          
+     </div>
+        
+      </article>
+      
+      <article class="article">
+        <p>Este es el parrafo  creado para el comtenido de la web, el cual consiste en ejecutar sentensias css y script</p>
+      </article>
+      
+      <article class="article">
+        <p>Este es el parrafo  creado para el comtenido de la web, el cual consiste en ejecutar sentensias css y script</p>
+      </article>
+      
+        <p id="firma">YaderMorales</p>
+      
+    </section>
+    
+    <aside class="aside">
+      <li class="lista">Curso Grid</li>
+      <li class="lista">Curso java</li>
+      <li class="lista">Curso react</li>
+      <li class="lista">Curso php</li>
+      <li class="lista">Curso pyton</li>
+      
+    </aside>
+      
+  </section>
+    
+
+         <footer class="footer" >
+      
+      <label for="Telefono">Telefono:</label>
+      <address>
+        57719526
+      </address>
+      <time datetime="28" pubdate="fecha"> 27-08-2022</time>
+      
+      <small>@copiring.derechos reservados.</small>
+      
+    </footer>
+    
+
+
+
+
+    </section>
+      
+      
+    </center>
+    
+
+    
+  </body>
+</html>
